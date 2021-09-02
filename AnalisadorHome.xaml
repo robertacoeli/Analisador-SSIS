@@ -14,6 +14,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="250"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -27,7 +29,11 @@
         <Label x:Name="TituloPagina" AutomationProperties.LiveSetting="Assertive" Grid.Row="0" Style="{StaticResource HeaderTextStyle}" >
             Analisador de Projetos SSIS
         </Label>
+        
+        <Label x:Name="TxtExplicativoApp" Grid.Row="1" Style="{StaticResource LabelStyle}">Aplicação destinada a auxiliar na análise e pesquisa de conteúdo nos projetos SSIS.</Label>
 
-        <Label x:Name="TxtExplicativo" Grid.Row="1" Style="{StaticResource LabelStyle}">Selecione abaixo o arquivo de solução (.sln) que contenha o(s) projeto(s) a serem analisados</Label>
+        <Label x:Name="TxtExplicativo" Grid.Row="1" Margin="0,30,0,0" Style="{StaticResource LabelStyle}">Selecione abaixo o arquivo de solução (.sln) que contenha o(s) projeto(s) a serem analisados:</Label>
+
+        <Button Grid.Column="1" Grid.Row="2" Click="Button_Click" Style="{StaticResource ButtonStyle}">Selecionar arquivo...</Button>
     </Grid>
 </Page>
