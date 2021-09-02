@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jgWBJOoH84/TbIUgpfjFRDU78tbxn93Tk9Ld6TwqwZdgvW3s8yuYYOs+I83yOMsvnjnsaVHnL8YzGItcIS2IzQ==",
+  "dgSpecHash": "9LCN6puYRaIkfQowaV+UudR+L6BmvFuoCw0zB+IIBYS5FuZ+3anCR5fpnpVXkC2Q1bXuknlj4sqDvdjiAnRTsQ==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\AnalisadorSSIS\\AnalisadorSSIS.csproj",
+  "projectFilePath": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\ssis_package_analyzer\\AnalisadorSSIS.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

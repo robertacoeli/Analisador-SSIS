@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = AnalisadorSSIS
-build_property.ProjectDir = D:\OneDrive - trf3.jus.br\AnalisadorSSIS\AnalisadorSSIS\
+build_property.ProjectDir = D:\OneDrive - trf3.jus.br\AnalisadorSSIS\ssis_package_analyzer\

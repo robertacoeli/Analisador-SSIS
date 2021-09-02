@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\OneDrive - trf3.jus.br\AnalisadorSSIS\AnalisadorSSIS\obj\Debug\net5.0-windows\
+D:\OneDrive - trf3.jus.br\AnalisadorSSIS\ssis_package_analyzer\obj\Debug\net5.0-windows\
 AnalisadorSSIS
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-D:\OneDrive - trf3.jus.br\AnalisadorSSIS\AnalisadorSSIS\App.xaml
-11407045341
+D:\OneDrive - trf3.jus.br\AnalisadorSSIS\ssis_package_analyzer\App.xaml
+3-959869260
 
-526412900
+6-608568027
 193-1891726104
-MainWindow.xaml;
+AnalisadorHome.xaml;MainWindow.xaml;Styles.xaml;
 
-False
+True
 

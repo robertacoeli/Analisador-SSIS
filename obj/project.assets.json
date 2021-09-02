@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\AnalisadorSSIS\\AnalisadorSSIS.csproj",
+      "projectUniqueName": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\ssis_package_analyzer\\AnalisadorSSIS.csproj",
       "projectName": "AnalisadorSSIS",
-      "projectPath": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\AnalisadorSSIS\\AnalisadorSSIS.csproj",
+      "projectPath": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\ssis_package_analyzer\\AnalisadorSSIS.csproj",
       "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
-      "outputPath": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\AnalisadorSSIS\\obj\\",
+      "outputPath": "D:\\OneDrive - trf3.jus.br\\AnalisadorSSIS\\ssis_package_analyzer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
