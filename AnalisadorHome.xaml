@@ -24,8 +24,10 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Label x:Name="TituloPagina" AutomationProperties.LiveSetting="Assertive" Grid.Column="1" Style="{StaticResource HeaderTextStyle}" >
+        <Label x:Name="TituloPagina" AutomationProperties.LiveSetting="Assertive" Grid.Row="0" Style="{StaticResource HeaderTextStyle}" >
             Analisador de Projetos SSIS
         </Label>
+
+        <Label x:Name="TxtExplicativo" Grid.Row="1" Style="{StaticResource LabelStyle}">Selecione abaixo o arquivo de solução (.sln) que contenha o(s) projeto(s) a serem analisados</Label>
     </Grid>
 </Page>

@@ -22,7 +22,7 @@
     <Style x:Key="LabelStyle" TargetType="{x:Type Label}">
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Label.FontSize" Value="16"></Setter>
         <Setter Property="Margin" Value="0,0,0,5" />
         <Style.Triggers>
             <!-- When in high contrast modes, follow system colors to present proper contrast between adjacent colors. -->
