@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace AnalisadorSSIS.Pages
         {
             DataContext = data;
             solucao = (Solucao)data;
-            ListaProjetos.ItemsSource = solucao.projetos;
+            ListaProjetos.ItemsSource = solucao.projetos.Select(x => System.IO.Path.GetFileName(x));
         }
     }
 }

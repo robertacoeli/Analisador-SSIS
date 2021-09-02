@@ -39,21 +39,6 @@
                     <Setter Property="AutomationProperties.Name" Value="{Binding XPath=@Name}"/>
                 </Style>
             </ListBox.Resources>
-            <!-- <ListBox Name="peopleListBox" 
-                 AutomationProperties.Name="Names"
-                 Grid.Column="1" Grid.Row="2" 
-                 ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
-                 ItemTemplate="{StaticResource nameItemTemplate}">
-            <ListBox.Resources>
-            <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                <Setter Property="AutomationProperties.Name" Value="{Binding XPath=@Name}"/>
-            </Style>
-            </ListBox.Resources>
-        </ListBox> -->
-            
         </ListBox>
-
-        <Label x:Name="NameLiveRegion" Style="{StaticResource LabelStyle}" Grid.Row="3"></Label>
-        <!-- Content="{Binding XPath=@Name}"-->
     </Grid>
 </Page>
