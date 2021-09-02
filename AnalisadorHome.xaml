@@ -34,6 +34,6 @@
 
         <Label x:Name="TxtExplicativo" Grid.Row="1" Margin="0,30,0,0" Style="{StaticResource LabelStyle}">Selecione abaixo o arquivo de solução (.sln) que contenha o(s) projeto(s) a serem analisados:</Label>
 
-        <Button Grid.Column="1" Grid.Row="2" Click="Button_Click" Style="{StaticResource ButtonStyle}">Selecionar arquivo...</Button>
+        <Button x:Name="BotaoSelecaoArquivo" Grid.Column="1" Grid.Row="2" Click="Button_Click" Style="{StaticResource ButtonStyle}">Selecionar arquivo...</Button>
     </Grid>
 </Page>
