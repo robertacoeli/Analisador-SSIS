@@ -1,4 +1,5 @@
 ﻿using AnalisadorSSIS.Modelo;
+using AnalisadorSSIS.Pages;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -42,8 +43,12 @@ namespace AnalisadorSSIS
 
             if (openFile.ShowDialog().HasValue)
             {
-                solucao = new Solucao(openFile.FileName);
+                string nomeArquivo = openFile.FileName;
 
+                if (string.IsNullOrEmpty(nomeArquivo))
+                    return;
+
+                solucao = new Solucao(nomeArquivo);
                 foreach (string subdiretorio in Directory.EnumerateDirectories(solucao.diretorio).OrderBy(x => x))
                 {
                     if (Directory.GetFiles(subdiretorio, string.Format("*{0}", Config.extensaoArquivoPacote)).Length > 0)
@@ -55,6 +60,9 @@ namespace AnalisadorSSIS
                     MessageBox.Show("Solução Inválida. A solução apresentada não possui projetos SSIS (extensão .dtsx).");
                     return;
                 }
+
+                SelecaoProjetoPage paginaSelecaoProjeto = new SelecaoProjetoPage(solucao);
+                NavigationService.Navigate(paginaSelecaoProjeto);
             }
         }
     }
