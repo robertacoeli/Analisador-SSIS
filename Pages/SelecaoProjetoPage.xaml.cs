@@ -35,6 +35,27 @@ namespace AnalisadorSSIS.Pages
             DataContext = data;
             solucao = (Solucao)data;
             ListaProjetos.ItemsSource = solucao.projetos.Select(x => System.IO.Path.GetFileName(x));
+
+            if (solucao.projetos.Count == 1)
+                ListaProjetos.SelectedIndex = 0;
+            else
+                BotaoPesquisar.IsEnabled = false;
+
+            NomeSolucao.Content = $"Solução: {solucao.nomeArquivo}";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var indice = ListaProjetos.SelectedIndex;
+            // TODO: terminar implementacao, chamando proxima pagina
+        }
+
+        private void SelecionarItem(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListaProjetos.SelectedIndex < 0)
+                BotaoPesquisar.IsEnabled = false;
+            else
+                BotaoPesquisar.IsEnabled = true;
         }
     }
 }
