@@ -5,14 +5,14 @@ namespace AnalisadorSSIS.Modelo
 {
     internal class Solucao
     {
-        public string nomeArquivoCompleto { get; set; }
-        public string nomeArquivo => Path.GetFileName(nomeArquivoCompleto);
-        public string diretorio => Path.GetDirectoryName(nomeArquivoCompleto);
-        public List<string> projetos { get; set; } = new List<string>();
+        public string NomeArquivoCompleto { get; set; }
+        public string NomeArquivo => Path.GetFileName(NomeArquivoCompleto);
+        public string Diretorio => Path.GetDirectoryName(NomeArquivoCompleto);
+        public List<string> Projetos { get; set; } = new List<string>();
 
         public Solucao (string arquivoSolucao)
         {
-            nomeArquivoCompleto = arquivoSolucao;
+            NomeArquivoCompleto = arquivoSolucao;
         }
     }
 }

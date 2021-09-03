@@ -34,14 +34,14 @@ namespace AnalisadorSSIS.Pages
         {
             DataContext = data;
             solucao = (Solucao)data;
-            ListaProjetos.ItemsSource = solucao.projetos.Select(x => System.IO.Path.GetFileName(x));
+            ListaProjetos.ItemsSource = solucao.Projetos.Select(x => System.IO.Path.GetFileName(x));
 
-            if (solucao.projetos.Count == 1)
+            if (solucao.Projetos.Count == 1)
                 ListaProjetos.SelectedIndex = 0;
             else
                 BotaoPesquisar.IsEnabled = false;
 
-            NomeSolucao.Content = $"Solução: {solucao.nomeArquivo}";
+            NomeSolucao.Content = $"Solução: {solucao.NomeArquivo}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

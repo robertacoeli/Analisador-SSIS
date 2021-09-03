@@ -49,13 +49,13 @@ namespace AnalisadorSSIS
                     return;
 
                 solucao = new Solucao(nomeArquivo);
-                foreach (string subdiretorio in Directory.EnumerateDirectories(solucao.diretorio).OrderBy(x => x))
+                foreach (string subdiretorio in Directory.EnumerateDirectories(solucao.Diretorio).OrderBy(x => x))
                 {
                     if (Directory.GetFiles(subdiretorio, string.Format("*{0}", Config.extensaoArquivoPacote)).Length > 0)
-                        solucao.projetos.Add(subdiretorio);
+                        solucao.Projetos.Add(subdiretorio);
                 }
 
-                if (solucao.projetos.Count <= 0)
+                if (solucao.Projetos.Count <= 0)
                 {
                     MessageBox.Show("Solução Inválida. A solução apresentada não possui projetos SSIS (extensão .dtsx).");
                     return;
