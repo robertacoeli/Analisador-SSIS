@@ -53,6 +53,12 @@
         <Setter Property="Label.FontSize" Value="14"></Setter>
     </Style>
 
+    <!-- Textbox Style -->
+    <Style x:Key="TextboxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Label.FontSize" Value="14"></Setter>
+    </Style>
+
     <!-- List header style -->
     <Style x:Key="ListHeaderStyle" TargetType="{x:Type Border}">
         <Setter Property="Height" Value="35" />

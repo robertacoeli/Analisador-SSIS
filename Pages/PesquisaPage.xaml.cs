@@ -34,5 +34,10 @@ namespace AnalisadorSSIS.Pages
             projeto = (Projeto)data;
             TituloPagina.Content = TituloPagina.Content + $" - {projeto.Solucao.NomeArquivo} - {projeto.Nome}";
         }
+
+        private void MostrarCamposPesquisa(object sender, SelectionChangedEventArgs e)
+        {
+            var t = FormaAnaliseCombobox.SelectedItem;
+        }
     }
 }
