@@ -47,6 +47,11 @@
                HorizontalAlignment="Left">Termo de Pesquisa:</Label>
             <TextBox x:Name="TermoPesquisa" Style="{StaticResource TextboxStyle}" Height="25" Width="350"
                      Margin="160,0,0,0"></TextBox>
+            <CheckBox x:Name="IsExpressaoExata" VerticalAlignment="Center" Style="{StaticResource CheckBoxStyle}"
+                      Margin="530,0,0,0">
+                <!--<Rectangle Width="30" Height="30"/>-->
+                Expressão Exata
+            </CheckBox>
         </Grid>
 
     </Grid>
