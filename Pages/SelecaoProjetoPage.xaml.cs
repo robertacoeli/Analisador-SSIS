@@ -48,10 +48,8 @@ namespace AnalisadorSSIS.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var indice = ListaProjetos.SelectedIndex;
-            Projeto projeto = ProjetoServicos.Executar(solucao, indice);
-            // TODO:
-            // 1. gerar objeto do Projeto
-            // 2. terminar implementacao, chamando proxima pagina e passando o objeto
+            PesquisaPage paginaPesquisa = new PesquisaPage(ProjetoServicos.Executar(solucao, indice));
+            NavigationService.Navigate(paginaPesquisa);
         }
 
         private void SelecionarItem(object sender, SelectionChangedEventArgs e)

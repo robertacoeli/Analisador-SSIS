@@ -55,14 +55,24 @@ namespace AnalisadorSSIS.Servicos
             return variaveis;
         }
 
+        private static List<Pacote> ObterPacotes(string caminhoProjeto)
+        {
+            List<Pacote> pacotes = new List<Pacote>();
+
+            foreach (var nomeArquivoPacote in Directory.GetFiles(caminhoProjeto).Where(x => x.Contains(Config.extensaoArquivoPacote)).OrderBy(x => x))
+            {
+                pacotes.Add(PacoteServicos.Executar(nomeArquivoPacote));
+            }
+
+            return pacotes;
+        }
+
         public static Projeto Executar(Solucao solucao, int indiceProjeto)
         {
             Projeto projeto = new Projeto(solucao, solucao.Projetos[indiceProjeto]);
             projeto.Conexoes = ObterConexoes(projeto.CaminhoCompleto);
             projeto.Variaveis = ObterVariaveis(projeto.CaminhoCompleto);
-
-            // TODO: obter conexoes, variaveis e demais dependencias
-
+            projeto.Pacotes = ObterPacotes(projeto.CaminhoCompleto);
             return projeto;
         }
     }

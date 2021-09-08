@@ -247,8 +247,13 @@ namespace AnalisadorSSIS.Servicos.Extensoes
         // Obtem os componentes (pipeline)
         public static IEnumerable<XElement> ObterComponentes(this XElement elemento)
         {
-            return elemento.ObterPipeline()
-                           .ObterDescendente(nomeElemento: "components").Elements();
+            var componentes = elemento.ObterPipeline()
+                                      .ObterDescendente(nomeElemento: "components");
+
+            if (componentes == null)
+                return new List<XElement>();
+
+            return componentes.Elements();
         }
 
         // Obtem o tipo do componente (pipeline)
