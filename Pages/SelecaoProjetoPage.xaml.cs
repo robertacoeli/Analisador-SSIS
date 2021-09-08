@@ -1,4 +1,5 @@
 ﻿using AnalisadorSSIS.Modelo;
+using AnalisadorSSIS.Servicos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -47,7 +48,10 @@ namespace AnalisadorSSIS.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var indice = ListaProjetos.SelectedIndex;
-            // TODO: terminar implementacao, chamando proxima pagina
+            Projeto projeto = ProjetoServicos.Executar(solucao, indice);
+            // TODO:
+            // 1. gerar objeto do Projeto
+            // 2. terminar implementacao, chamando proxima pagina e passando o objeto
         }
 
         private void SelecionarItem(object sender, SelectionChangedEventArgs e)
