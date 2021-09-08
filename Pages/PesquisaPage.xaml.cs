@@ -32,7 +32,7 @@ namespace AnalisadorSSIS.Pages
         {
             DataContext = data;
             projeto = (Projeto)data;
-            Identificacao.Content = $"{projeto.Solucao.NomeArquivo} - {projeto.Nome}";
+            TituloPagina.Content = TituloPagina.Content + $" - {projeto.Solucao.NomeArquivo} - {projeto.Nome}";
         }
     }
 }

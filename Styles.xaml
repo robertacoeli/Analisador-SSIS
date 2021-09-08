@@ -33,6 +33,26 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="LabelStyle2" TargetType="{x:Type Label}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Label.FontSize" Value="16"></Setter>
+        <Setter Property="Margin" Value="10,0,0,5" />
+        <Style.Triggers>
+            <!-- When in high contrast modes, follow system colors to present proper contrast between adjacent colors. -->
+            <DataTrigger Binding="{Binding Path=(SystemParameters.HighContrast)}" Value="true">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!-- Combobox Style -->
+    <Style x:Key="ComboboxStyle" TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Label.FontSize" Value="14"></Setter>
+    </Style>
+
     <!-- List header style -->
     <Style x:Key="ListHeaderStyle" TargetType="{x:Type Border}">
         <Setter Property="Height" Value="35" />

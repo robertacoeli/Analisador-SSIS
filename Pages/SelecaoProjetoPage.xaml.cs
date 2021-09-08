@@ -42,7 +42,7 @@ namespace AnalisadorSSIS.Pages
             else
                 BotaoPesquisar.IsEnabled = false;
 
-            NomeSolucao.Content = $"Solução: {solucao.NomeArquivo}";
+            TituloPagina.Content = TituloPagina.Content + $" - {solucao.NomeArquivo}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

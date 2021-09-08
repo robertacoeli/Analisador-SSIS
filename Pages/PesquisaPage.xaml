@@ -14,8 +14,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="210"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -30,7 +29,19 @@
             Analisador de Projetos SSIS
         </Label>
 
-        <Label x:Name="Identificacao" Grid.Row="1" Style="{StaticResource LabelStyle}"/>
-        <Label x:Name="TxtExplicativoApp" Grid.Row="2" Style="{StaticResource LabelStyle}">Por favor, selecione o(s) projeto(s) a pesquisar:</Label>
+        <Label x:Name="TxtExplicativoApp" Grid.Row="1" Style="{StaticResource LabelStyle2}" 
+               HorizontalAlignment="Left">Forma de Análise:
+        </Label>
+
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" 
+                  Margin="160,0,0,0" Width="190" Height="25"
+                  Style="{StaticResource ComboboxStyle}"
+                  IsEditable="True"
+                  IsReadOnly="True"
+                  Text="Selecione...">
+            <ComboBoxItem>Por Termo</ComboBoxItem>
+            <ComboBoxItem>Por Pacote</ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 </Page>

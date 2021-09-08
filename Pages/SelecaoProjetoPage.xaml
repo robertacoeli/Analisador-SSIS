@@ -14,7 +14,6 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="35"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="210"/>
             <RowDefinition Height="50"/>
@@ -30,10 +29,9 @@
             Analisador de Projetos SSIS
         </Label>
 
-        <Label x:Name="NomeSolucao" Grid.Row="1" Style="{StaticResource LabelStyle}"/>
-        <Label x:Name="TxtExplicativoApp" Grid.Row="2" Style="{StaticResource LabelStyle}">Por favor, selecione o(s) projeto(s) a pesquisar:</Label>
+        <Label x:Name="TxtExplicativoApp" Grid.Row="1" Style="{StaticResource LabelStyle}">Por favor, selecione o(s) projeto(s) a pesquisar:</Label>
 
-        <ListBox x:Name="ListaProjetos" Grid.Row="3" 
+        <ListBox x:Name="ListaProjetos" Grid.Row="2" 
                  Width="320" Height="200"
                  VerticalAlignment="Top"
                  SelectionChanged="SelecionarItem">
@@ -42,7 +40,7 @@
             </ListBox.Resources>
         </ListBox>
 
-        <Button x:Name="BotaoPesquisar" Grid.Column="3" Grid.Row="4" Click="Button_Click" Style="{StaticResource ButtonStyle}">
+        <Button x:Name="BotaoPesquisar" Grid.Column="3" Grid.Row="3" Click="Button_Click" Style="{StaticResource ButtonStyle}">
             Pesquisar
         </Button>
     </Grid>
