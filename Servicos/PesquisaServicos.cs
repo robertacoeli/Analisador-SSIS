@@ -1,11 +1,7 @@
 ﻿using AnalisadorSSIS.Modelo;
 using AnalisadorSSIS.Modelo.Enums;
 using AnalisadorSSIS.Servicos.Extensoes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnalisadorSSIS.Servicos
 {
@@ -55,7 +51,7 @@ namespace AnalisadorSSIS.Servicos
                     Nome = conexao.Nome,
                     TipoItem = TipoItem.Conexao,
                     TipoResultado = TipoResultado.Titulo,
-                    Habilitado = pacote.Habilitado,
+                    Habilitado = true,
                     IdConexao = conexao.Id,
                     ConteudoCorrespondente = conexao.Nome
                 });
@@ -68,7 +64,7 @@ namespace AnalisadorSSIS.Servicos
                     Nome = conexao.Nome,
                     TipoItem = TipoItem.Conexao,
                     TipoResultado = TipoResultado.Conteudo,
-                    Habilitado = pacote.Habilitado,
+                    Habilitado = true,
                     IdConexao = conexao.Id,
                     ConteudoCorrespondente = conexao.ConnectionString
                 });
@@ -215,8 +211,15 @@ namespace AnalisadorSSIS.Servicos
                 PesquisarParametroProjeto(variavel);
         }
 
+        private void PesquisarConexoesProjeto()
+        {
+            foreach (Conexao conexao in Projeto.Conexoes)
+                PesquisarConexao(conexao, null);
+        }
+
         public void Pesquisar()
         {
+            PesquisarConexoesProjeto();
             PesquisarParametrosProjeto();
             PesquisarPacotesProjeto();
         }
