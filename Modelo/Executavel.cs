@@ -1,4 +1,5 @@
 ﻿using AnalisadorSSIS.Modelo.Enums;
+using AnalisadorSSIS.Servicos.Extensoes;
 using System.Collections.Generic;
 
 namespace AnalisadorSSIS.Modelo

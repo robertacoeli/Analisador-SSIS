@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using AnalisadorSSIS.Servicos.Extensoes;
+using System.Collections.Generic;
+using System.IO;
 
 namespace AnalisadorSSIS.Modelo
 {
@@ -13,7 +15,7 @@ namespace AnalisadorSSIS.Modelo
 
         public Pacote(string nome, string nomeArquivo)
         {
-            Nome = nome;
+            Nome = Path.GetFileNameWithoutExtension(nome);
             NomeArquivo = nomeArquivo;
         }
     }

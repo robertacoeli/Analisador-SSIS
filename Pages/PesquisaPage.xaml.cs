@@ -1,4 +1,6 @@
 ﻿using AnalisadorSSIS.Modelo;
+using AnalisadorSSIS.Servicos;
+using AnalisadorSSIS.Servicos.Extensoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,9 +39,9 @@ namespace AnalisadorSSIS.Pages
 
         private void VerificarEntradaPesquisa(object sender, TextChangedEventArgs e)
         {
-            var textoPesquisa = TermoPesquisa.Text;
+            var termoPesquisa = TermoPesquisa.Text;
 
-            if (string.IsNullOrWhiteSpace(textoPesquisa))
+            if (string.IsNullOrWhiteSpace(termoPesquisa))
                 BotaoPesquisar.IsEnabled = false;
             else
                 BotaoPesquisar.IsEnabled = true;
@@ -47,7 +49,9 @@ namespace AnalisadorSSIS.Pages
 
         private void Pesquisar(object sender, RoutedEventArgs e)
         {
-            // TODO: implementar logica de pesquisa
+            string termoPesquisa = TermoPesquisa.Text;
+            PesquisaServicos servicoPesquisa = new PesquisaServicos(termoPesquisa, projeto);
+            servicoPesquisa.Pesquisar();
         }
     }
 }
