@@ -35,9 +35,19 @@ namespace AnalisadorSSIS.Pages
             TituloPagina.Content = TituloPagina.Content + $" - {projeto.Solucao.NomeArquivo} - {projeto.Nome}";
         }
 
-        private void MostrarCamposPesquisa(object sender, SelectionChangedEventArgs e)
+        private void VerificarEntradaPesquisa(object sender, TextChangedEventArgs e)
         {
-            var t = FormaAnaliseCombobox.SelectedItem;
+            var textoPesquisa = TermoPesquisa.Text;
+
+            if (string.IsNullOrWhiteSpace(textoPesquisa))
+                BotaoPesquisar.IsEnabled = false;
+            else
+                BotaoPesquisar.IsEnabled = true;
+        }
+
+        private void Pesquisar(object sender, RoutedEventArgs e)
+        {
+            // TODO: implementar logica de pesquisa
         }
     }
 }

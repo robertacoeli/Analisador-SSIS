@@ -15,7 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="45"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.Background>
@@ -29,30 +29,14 @@
             Analisador de Projetos SSIS
         </Label>
 
-        <Label x:Name="TxtExplicativoApp" Grid.Row="1" Style="{StaticResource LabelStyle2}" 
-               HorizontalAlignment="Left">Forma de Análise:
-        </Label>
+        <Label Style="{StaticResource LabelStyle2}" Grid.Row="1" HorizontalAlignment="Left">Termo de Pesquisa:</Label>
+        <TextBox x:Name="TermoPesquisa" Style="{StaticResource TextboxStyle}" Height="25" Width="370" Grid.Row="1" Margin="160,0,0,0" 
+                 TextChanged="VerificarEntradaPesquisa"></TextBox>
+        <CheckBox x:Name="IsExpressaoExata" VerticalAlignment="Center" Style="{StaticResource CheckBoxStyle}" Margin="550,0,0,0" Grid.Row="1">
+            Expressão Exata
+        </CheckBox>
 
-        <ComboBox x:Name="FormaAnaliseCombobox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" 
-                  Margin="160,0,0,0" Width="190" Height="25"
-                  Style="{StaticResource ComboboxStyle}"
-                  IsEditable="True" IsReadOnly="True" Text="Selecione..."
-                  SelectionChanged="MostrarCamposPesquisa">
-            <ComboBoxItem Tag="TERMO">Por Termo</ComboBoxItem>
-            <ComboBoxItem Tag="PACOTE">Por Pacote</ComboBoxItem>
-        </ComboBox>
-
-        <Grid x:Name="BuscaPorTermo" Grid.Row="2">
-            <Label Style="{StaticResource LabelStyle2}" 
-               HorizontalAlignment="Left">Termo de Pesquisa:</Label>
-            <TextBox x:Name="TermoPesquisa" Style="{StaticResource TextboxStyle}" Height="25" Width="350"
-                     Margin="160,0,0,0"></TextBox>
-            <CheckBox x:Name="IsExpressaoExata" VerticalAlignment="Center" Style="{StaticResource CheckBoxStyle}"
-                      Margin="530,0,0,0">
-                <!--<Rectangle Width="30" Height="30"/>-->
-                Expressão Exata
-            </CheckBox>
-        </Grid>
-
+        <Button x:Name="BotaoPesquisar" Grid.Row="2" Click="Pesquisar" IsEnabled="False"
+                Style="{StaticResource ButtonStyle}">Pesquisar</Button>
     </Grid>
 </Page>
