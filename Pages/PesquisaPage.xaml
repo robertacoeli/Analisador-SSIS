@@ -38,5 +38,19 @@
 
         <Button x:Name="BotaoPesquisar" Grid.Row="2" Click="Pesquisar" IsEnabled="False"
                 Style="{StaticResource ButtonStyle}">Pesquisar</Button>
+
+        <ScrollViewer Grid.Row="3" Visibility="Visible">
+            <DataGrid x:Name="DataGridResultados" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Nome}" Header="Tipo"/>
+                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Pacote"/>
+                    <DataGridTextColumn Binding="{Binding Nome}" Header="Nome"/>
+                    <DataGridTextColumn Binding="{Binding Email}" Header="Tipo do Item"/>
+                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Habilitado"/>
+                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Conexão"/>
+                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Conteúdo"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace AnalisadorSSIS.Modelo.Enums
 {
     internal enum TipoResultado
     {
+        [Description("Conteúdo")]
         Conteudo,
+        [Description("Expressão")]
         Expressao,
+        [Description("Título do Componente")]
         Titulo
     }
 }
