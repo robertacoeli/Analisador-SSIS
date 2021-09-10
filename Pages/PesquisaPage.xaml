@@ -42,13 +42,13 @@
         <ScrollViewer Grid.Row="3" Visibility="Visible">
             <DataGrid x:Name="DataGridResultados" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Nome}" Header="Tipo"/>
-                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Pacote"/>
+                    <DataGridTextColumn Binding="{Binding TipoResultadoStr}" Header="Tipo"/>
+                    <DataGridTextColumn Binding="{Binding NomePacote}" Header="Pacote"/>
                     <DataGridTextColumn Binding="{Binding Nome}" Header="Nome"/>
-                    <DataGridTextColumn Binding="{Binding Email}" Header="Tipo do Item"/>
-                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Habilitado"/>
-                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Conexão"/>
-                    <DataGridTextColumn Binding="{Binding Telefone}" Header="Conteúdo"/>
+                    <DataGridTextColumn Binding="{Binding TipoItemStr}" Header="Tipo do Item"/>
+                    <DataGridTextColumn Binding="{Binding Habilitado}" Header="Habilitado"/>
+                    <DataGridTextColumn Binding="{Binding NomeConexao}" Header="Conexão"/>
+                    <DataGridTextColumn Binding="{Binding ConteudoResultado}" Header="Conteúdo"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>

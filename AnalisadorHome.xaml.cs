@@ -36,7 +36,7 @@ namespace AnalisadorSSIS
             var openFile = new OpenFileDialog
             {
                 Filter = "Solution Files (*.sln)|*.sln",
-                InitialDirectory = "Content", // TODO: ver a ultima solucao aberta e colocar no diretorio da mesma (colocar num arquivo log)
+                InitialDirectory = "Content",
                 Title = "Selecionar arquivo de solução do projeto",
                 Multiselect = false
             };

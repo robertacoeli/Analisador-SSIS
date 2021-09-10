@@ -52,6 +52,22 @@ namespace AnalisadorSSIS.Pages
             string termoPesquisa = TermoPesquisa.Text;
             PesquisaServicos servicoPesquisa = new PesquisaServicos(termoPesquisa, projeto);
             servicoPesquisa.Pesquisar();
+
+
+            DataGridResultados.ItemsSource = servicoPesquisa.Resultados
+                                                            .Join(projeto.Conexoes,
+                                                                    resultado => resultado.IdConexao,
+                                                                    conexao => conexao.Id,
+                                                                    (resultado, conexao) => new
+                                                                    {
+                                                                        TipoResultadoStr = resultado.TipoResultado.GetDescription(),
+                                                                        NomePacote = resultado.Pacote != null ? resultado.Pacote.Nome : "-",
+                                                                        Nome = resultado.Nome,
+                                                                        TipoItemStr = resultado.TipoItem.GetDescription(),
+                                                                        Habilitado = resultado.Habilitado,
+                                                                        NomeConexao = conexao.Nome,
+                                                                        ConteudoResultado = resultado.ConteudoCorrespondente // TODO: destacar o que corresponde ao termo de pesquisa?
+                                                                    }).ToList();
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace AnalisadorSSIS.Modelo.Extensoes
+namespace AnalisadorSSIS.Servicos.Extensoes
 {
     internal static class EnumExtensions
     {
