@@ -53,21 +53,37 @@ namespace AnalisadorSSIS.Pages
             PesquisaServicos servicoPesquisa = new PesquisaServicos(termoPesquisa, projeto);
             servicoPesquisa.Pesquisar();
 
+            if (servicoPesquisa.Resultados == null || servicoPesquisa.Resultados.Count <= 0)
+            {
+                DataGridResultados.ItemsSource = null;
+                GridTabelaResultados.Visibility = Visibility.Hidden;
+                ResumoResultados.Content = "Nenhum resultado foi retornado para sua pesquisa.";
+            }
+            else
+            {
+                var resultados = servicoPesquisa.Resultados
+                                .GroupJoin(projeto.Conexoes,
+                                            resultado => resultado.IdConexao,
+                                            conexao => conexao.Id,
+                                            (resultado, conexao) => new { Resultados = resultado, Conexoes = conexao })
+                                .SelectMany(c => c.Conexoes.DefaultIfEmpty(),
+                                            (r, c) => new
+                                            {
+                                                TipoResultadoStr = r.Resultados.TipoResultado.GetDescription(),
+                                                NomePacote = r.Resultados.Pacote != null ? r.Resultados.Pacote.Nome : "N/A",
+                                                Nome = r.Resultados.Nome,
+                                                TipoItemStr = r.Resultados.TipoItem.GetDescription(),
+                                                Habilitado = r.Resultados.Habilitado,
+                                                NomeConexao = c != null ? c.Nome : "N/A",
+                                                ConteudoResultado = r.Resultados.ConteudoCorrespondente // TODO: destacar o que corresponde ao termo de pesquisa?
+                                                        }).ToList();
 
-            DataGridResultados.ItemsSource = servicoPesquisa.Resultados
-                                                            .Join(projeto.Conexoes,
-                                                                    resultado => resultado.IdConexao,
-                                                                    conexao => conexao.Id,
-                                                                    (resultado, conexao) => new
-                                                                    {
-                                                                        TipoResultadoStr = resultado.TipoResultado.GetDescription(),
-                                                                        NomePacote = resultado.Pacote != null ? resultado.Pacote.Nome : "-",
-                                                                        Nome = resultado.Nome,
-                                                                        TipoItemStr = resultado.TipoItem.GetDescription(),
-                                                                        Habilitado = resultado.Habilitado,
-                                                                        NomeConexao = conexao.Nome,
-                                                                        ConteudoResultado = resultado.ConteudoCorrespondente // TODO: destacar o que corresponde ao termo de pesquisa?
-                                                                    }).ToList();
+                DataGridResultados.ItemsSource = resultados;
+                GridTabelaResultados.Visibility = Visibility.Visible;
+                ResumoResultados.Content = $"Sua pesquisa retornou {resultados.Count} resultados.";
+            }
+
+            GridResultados.Visibility = Visibility.Visible;
         }
     }
 }
