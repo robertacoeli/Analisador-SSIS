@@ -38,6 +38,14 @@ namespace AnalisadorSSIS.Servicos.Extensoes
             return Regex.Replace(str, @"\s\s+", " ").Trim();
         }
 
+        internal static string FormatarIgnorandoEspacos(this string str)
+        {
+            str = str.ToLower();
+            str = str.RemoverAcentos();
+            str = str.RemoverPontuacao();
+            return str;
+        }
+
         internal static string Formatar(this string str)
         {
             str = str.ToLower();
