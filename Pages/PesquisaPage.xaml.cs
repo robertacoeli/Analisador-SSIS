@@ -25,7 +25,7 @@ namespace AnalisadorSSIS.Pages
     /// </summary>
     public partial class PesquisaPage : Page
     {
-        static int CARACTERES_MARGEM_TERMO = 20;
+        static int CARACTERES_MARGEM_TERMO = 50;
         Projeto projeto;
 
         public PesquisaPage()
@@ -42,7 +42,7 @@ namespace AnalisadorSSIS.Pages
 
         private string EncontrarTermoNoConteudo(string termo, string conteudo, TipoResultado tipoResultado)
         {
-            if (string.IsNullOrEmpty(conteudo) || tipoResultado != TipoResultado.Conteudo)
+            if (string.IsNullOrEmpty(conteudo) || tipoResultado == TipoResultado.Titulo)
                 return conteudo;
 
             StringBuilder stringBuilder = new StringBuilder();
@@ -61,7 +61,7 @@ namespace AnalisadorSSIS.Pages
                 int limiteSuperior = indiceTermo + tamanhoTermo + CARACTERES_MARGEM_TERMO;
                 limiteSuperior = limiteSuperior > tamanhoLinha ? tamanhoLinha : limiteSuperior;
                 string stringInicial = limiteInferior == 0 && numLinha == 1 ? string.Empty : "(...)";
-                stringBuilder.AppendLine($"L. {numLinha}: {stringInicial}{linha.Substring(limiteInferior, limiteSuperior - limiteInferior)}");
+                stringBuilder.AppendLine($"Linha {numLinha}: {stringInicial}{linha.Substring(limiteInferior, limiteSuperior - limiteInferior)}");
                 numLinha += 1;
             }
 
